@@ -1,0 +1,28 @@
+.login
+  background: url(../img/water.jpg) center center no-repeat
+  background-size: cover
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  &__title
+    color: #ffffff
+    margin-bottom: 60px
+    &::after
+      background: #ffffff
+      margin-top: 20px
+.login__block
+  +center(both)
+  background: rgba(18, 38, 32, 0.6)
+  border-radius: 5px
+  padding-top: 40px
+.login__form
+  text-align: center
+input[name="login"],input[name="pass"]
+  width: 340px
+  +box()
+.login__btn-nav
+  & .btn-nav__item
+    flex: 1 1
+    text-align: center

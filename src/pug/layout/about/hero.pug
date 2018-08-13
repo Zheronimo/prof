@@ -1,0 +1,18 @@
+section.section.hero
+	ul.socials
+		each item in socials
+			li.socials__item
+				a(href="#" class="socials__link socials__link_" + item)
+					+icon(item, "hero-icon")
+	a.humburger(href="#")
+		span.humburger__line
+	a.down-arrow(href="#")
+		+icon("arrow_down") 
+	.hero__title
+		img.section__title(src="static/img/portfolio_header.png", alt="")
+		.user.hero__user-block
+			.user__photo
+				.user__photo-avatar
+					img(src="static/img/avatar.jpg", alt="")
+			.user__name Евгений Кириченко
+			.user__desc Личный сайт веб-разработчика

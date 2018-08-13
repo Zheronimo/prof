@@ -1,0 +1,15 @@
+{
+	"skills" : [
+		{
+			"Frontend" : ["HTML", "CSS", "JavaScript&\njQuery"]
+		},
+		{
+			"Backend" : ["PHP", "mySQL", "Node.js&\nnpm"]
+		},
+		{
+			"WorkFlow" : ["Git", "Gulp", "Bower"]
+		}
+	],
+	"socials" : ["fb", "gh", "in"],
+	"nav_menu" : ["Мои работы", "Обо мне", "Блог", "Авторизация"]
+}

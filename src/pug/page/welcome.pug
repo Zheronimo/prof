@@ -1,0 +1,28 @@
+extends ../main
+
+block title
+	| Welcome
+block content
+	section.section.welcome
+		a(href="#").btn.welcome__btn Авторизоваться
+		.welcome__user
+			.user
+				.user__photo
+					.user__photo-avatar
+						img(src="static/img/avatar.jpg", alt="")
+				.user__name Евгений Кириченко
+				.user__desc Личный сайт веб-разработчика
+			ul.socials
+				each item in socials
+					li.socials__item
+						a(href="#" class="socials__link socials__link_" + item)
+							+icon(item, "welcome-icon")
+			ul.nav.welcome__nav
+				each link in ["Мои работы","Обо мне","Блог"]
+					li.nav__item
+						if(link == "Обо мне")
+							a(href="about.html").nav__link=link
+						else
+							a(href="#").nav__link=link
+		.welcome__footer
+			p © Кириченко Евгений | Создано с любовью в LoftSchool | 2018 

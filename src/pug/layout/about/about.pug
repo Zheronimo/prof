@@ -1,0 +1,43 @@
+section.section.about
+	.about__left
+		svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_green.about__triangles
+			polygon(points="0,0 0,1000 1000,100")
+		.title.about__section-title
+			| Обо мне
+		.user-about
+			.user-about__picture
+				img(src="static/img/user-picture.jpg", alt="")
+			.user-about__title
+				.subtitle
+					| Кто я
+			.user-about__text
+				p  
+					| Я веб разработчик из Киева. Мне 30 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+				p  
+					| Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+	.about__right
+		svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_cararra.about__triangles
+			polygon(points="0,100 1000,100 1000,0")
+		.about-data
+			.about-data__description.about-user-info
+				.about-user-info__title
+					.subtitle Чем я могу быть#[br]  вам полезен
+				.about-user-info__text
+					p
+						| Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+			.about-data__content
+				ul.skills
+					each skill in skills
+						each skillsArray, skillName in skill
+							li.skills__item
+								.skill-section
+									.skill-section__title= skillName
+									ul.skill-section__list
+										each skillTitle in skillsArray
+											li.skills-section__item
+												.skill
+													svg(viewbox="0 0 100 100" preserveAspectRatio="none").skill__circle
+														circle(cx="50" cy="50" r="40").skill__circle-under
+														circle(cx="50" cy="50" r="40").skill__circle-above
+													.skill__name= skillTitle
+													

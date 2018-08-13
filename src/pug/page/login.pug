@@ -1,0 +1,35 @@
+extends ../main
+
+block title
+    | Login
+block content
+    section.section.login
+        .login__block
+            .subtitle.login__title
+                | Авторизуйтесь
+            form.login__form
+                p
+                    //+icon("login")
+                    input(type="text" name="login" placeholder="Логин")
+                p
+                    //+icon("password")
+                    input(type="password" name="pass" placeholder="Пароль")
+                input(type="checkbox")
+                p Вы точно не робот?
+                label
+                    input(type="radio" value="Да" name="question")
+                    | Да
+                label
+                    input(type="radio" value="Не уверен" name="question")
+                    | Не уверен
+                ul.btn-nav.login__btn-nav
+                    each link in ["На главную","Войти"]
+                        li.btn-nav__item
+                            if(link == "На главную")
+                                a(href="index.html").btn-nav__link=link
+                            else
+                                a(href="#").btn-nav__link=link
+
+
+
+

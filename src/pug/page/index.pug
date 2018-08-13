@@ -4,7 +4,7 @@ block title
 	| Welcome
 block content
 	section.section.welcome
-		a(href="#").btn.welcome__btn Авторизоваться
+		a(href="login.html").btn.welcome__btn Авторизоваться
 		.welcome__user
 			.user
 				.user__photo
@@ -17,12 +17,12 @@ block content
 					li.socials__item
 						a(href="#" class="socials__link socials__link_" + item)
 							+icon(item, "welcome-icon")
-			ul.nav.welcome__nav
+			ul.btn-nav.welcome__btn-nav
 				each link in ["Мои работы","Обо мне","Блог"]
-					li.nav__item
+					li.btn-nav__item
 						if(link == "Обо мне")
-							a(href="about.html").nav__link=link
+							a(href="about.html").btn-nav__link=link
 						else
-							a(href="#").nav__link=link
+							a(href="#").btn-nav__link=link
 		.welcome__footer
 			p © Кириченко Евгений | Создано с любовью в LoftSchool | 2018 

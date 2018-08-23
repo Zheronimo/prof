@@ -1,3 +1,16 @@
+$(document).ready(function(){
+	$(".welcome__btn").on("click",function(event){
+		event.preventDefault();
+		$(".welcome__user").css("transform", "rotateY(180deg)");
+		$(".welcome__autor").css("transform", "rotateY(360deg)");
+		$(this).css("display", "none");
+	});
+	$(".btn-nav__link_main").on("click",function(){
+		$(".welcome__user").css("transform", "rotateY(0deg)");
+		$(".welcome__autor").css("transform", "rotateY(180deg)");
+		$(".welcome__btn").css("display","block");
+	});
+});
 function initMap(){
 	var element = document.getElementById("map");
 	var options = {
@@ -214,3 +227,4 @@ function initMap(){
 		}
 	}	
 }
+/* Инициализируем карту */

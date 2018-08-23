@@ -6,16 +6,31 @@
 	left: 0
 	right: 0
 	bottom: 0
+	display: flex
+	justify-content: center
+	align-items: center
 .welcome__btn
 	position: absolute
 	top: 25px
 	right: 100px
 	border: 1px solid #ffffff
-.welcome__user
-	+center(both)
+.welcome__container
+	width: 380px
+	height: 426px
+	position: relative
+	+box()
+	perspective: 1000px
+.welcome__user, .welcome__autor
+	display: flex
+	flex-direction: column
+	justify-content: flex-end
+	position: absolute
+	+coverdiv
+	transition: 1s
 	background: rgba(18, 38, 32, 0.6)
 	border-radius: 5px
-	padding-top: 40px
+	backface-visibility: hidden
+.welcome__user
 	& .socials
 		justify-content: center
 		margin-bottom: 40px
@@ -27,6 +42,52 @@
 		+lh(34,28)
 	& .user__photo
 		margin-bottom: 20px
+.welcome__autor
+	transform: rotateY(180deg)
+.autor
+	color: #fff
+	&__title
+		color: #ffffff
+		margin-bottom: 30px
+		&::after
+			background: #ffffff
+			margin-top: 20px
+	&__form
+		text-align: center
+		input[name="login"],input[name="pass"]
+			width: 100%
+			padding: 14px 0 14px 55px
+			border-radius: 50px
+			color: rgba(55, 62, 66, 0.5)
+			border: 3px solid #fff
+	&__login, &__pass
+		margin: 0 20px
+	&__login
+		margin-bottom: 20px
+		input[name="login"]
+			background: #fff url(../img/login.svg) no-repeat 5% 50%
+			background-size: 20px
+			&:focus
+				background-image: url(../img/login-green.svg)
+				border: 3px solid $asparagus
+	&__pass
+		margin-bottom: 20px
+		input[name="pass"]
+			background: #fff url(../img/password.svg) no-repeat 5% 50%
+			background-size: 20px
+			&:focus
+				background-image: url(../img/password-green.svg)
+				border: 3px solid $asparagus
+	&__chack
+		margin-bottom: 10px
+		span 
+			margin-left: 10px
+	&__radio
+		margin-bottom: 30px
+		p 
+			margin-bottom: 10px
+		label + label 
+			margin-left: 40px
 .welcome__footer
 	+center(x)
 	bottom: 40px

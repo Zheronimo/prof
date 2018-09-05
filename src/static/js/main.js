@@ -10,6 +10,14 @@ $(document).ready(function(){
 		$(".welcome__autor").css("transform", "rotateY(180deg)");
 		$(".welcome__btn").css("display","block");
 	});
+	/* Parallax */
+	var section = $(".hero");
+	$(window).scroll(function(){
+		var scrollTop = -($(window).scrollTop()),
+				speed = section.data("speed"),
+				coords = "50%" + scrollTop / speed + "px"
+				section.css("background-position", coords);
+	});
 });
 function initMap(){
 	var element = document.getElementById("map");

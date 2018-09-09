@@ -1,0 +1,48 @@
+extends ../main
+
+block title
+	|Мои роботы
+block content
+	include ../layout/hero
+	section.section.works
+		svg.triangle.triangle_fill_cararra.works__triangle
+			polygon(points="0,0 0,1000 1000,100")
+		svg.triangle.triangle_fill_cararra.triangle_right.works__triangle
+			polygon(points="0,0 0,1000 1000,100")
+		.title.works__title
+			|Мои роботы
+	section.section.slider
+		.slider__discription.description-sl
+			.description-sl__container
+				.description-sl__title
+					|Сайт школы онлайн Образования
+				.description-sl__skills 
+					|HTML , CSS, JAVASCRIPT
+				a.description-sl__link Посмотреть сайт
+		.slider__photo.photo-sl
+			ul.photo-sl__list
+				li.photo-sl__item
+					.photo-sl__slide
+						
+	section.section.feedback
+		.feedback__title
+			|Что обо мне говорят
+		.feedback__reviews.reviews
+			ul.reviews__list
+				li.reviews__item
+					.reviews__photo-wrap
+						img(src="static/img/ticher1.png").reviews__photo
+					.reviews__text
+						|Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+					.reviews__author
+						.reviews__author-name Ковальчук Дмитрий
+						.reviews__author-status — основатель Loftschool
+				li.reviews__item
+					.reviews__photo-wrap
+						img(src="static/img/ticher2.png").reviews__photo
+					.reviews__text
+						|Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+					.reviews__author
+						.reviews__author-name Сабанцев Владимир
+						.reviews__author-status — преподаватель
+	include ../layout/footer

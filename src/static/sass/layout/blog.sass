@@ -1,0 +1,56 @@
+.blog
+	background: $cararra
+.blog__triangle
+	position: absolute
+	bottom: 100%
+.blog__container
+	margin-top: 60px
+	display: flex
+.blog__sidebar
+	flex: 1
+	padding-left: 100px
+.blog-menu
+	text-align: right
+	&__item
+		position: relative
+		padding: 15px 20px
+		+box
+.blog-menu__item_active
+	&::after
+		content: ""
+		display: block
+		position: absolute
+		top: 0
+		right: 0
+		width: 3px
+		height: 100%
+		background: $fernGreen
+.blog-menu__item_active .blog-menu__link
+	color: $fernGreen
+.blog__main
+	flex: 3
+	padding-right: 150px
+	margin-left: 100px
+.post__item
+	margin-bottom: 70px
+.post__item + .post__item
+	&::before
+		content: ""
+		display: block
+		margin-bottom: 60px
+		max-width: 681px
+		height: 5px
+		background: $gray
+.post__item + .post__item
+	margin-top: 60px
+.post__title
+	font-family: $sunsus
+	font-size: 35px
+	font-weight: bold
+	margin-bottom: 25px
+.post__data
+	display: block
+	margin-bottom: 25px
+	color: $fernGreen
+.post__content p
+	margin-bottom: 20px

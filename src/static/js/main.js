@@ -19,6 +19,7 @@ $(document).ready(function(){
 				section.css("background-position", coords);
 	});
 });
+/* Инициализируем карту */
 function initMap(){
 	var element = document.getElementById("map");
 	var options = {
@@ -235,4 +236,3 @@ function initMap(){
 		}
 	}	
 }
-/* Инициализируем карту */

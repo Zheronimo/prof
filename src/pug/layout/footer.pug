@@ -7,10 +7,15 @@ footer.footer
 			ul.nav-menu.footer__nav-menu
 				each link in nav_menu
 					li.nav-menu__item
-						if(link == "Авторизация")
-							a(href="index.html").nav-menu__link=link
-						else
-							a(href="#").nav-menu__link=link
+						case link
+							when "Авторизация"
+								a(href="index.html").nav-menu__link=link
+							when "Блог"
+								a(href="blog.html").nav-menu__link=link
+							when "Обо мне"
+								a(href="about.html").nav-menu__link=link
+							when "Мои работы"
+								a(href="works.html").nav-menu__link=link
 			ul.socials
 				each item in socials
 					li.socials__item

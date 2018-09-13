@@ -25,6 +25,44 @@ body
 h1,h2,h3,h4,h5,h6
 	margin: 0
 	font-weight: normal
+
+h2
+	position: relative
+	display: inline-block
+	padding: 32px 60px
+	margin: 70px 0
+	font-family: $sunsus
+	font-size: 63px
+	+lh(66,63)
+	color: $titles
+	text-transform: uppercase
+	&:after
+		content: ""
+		display: block
+		+center(x)
+		width: 89px
+		height: 3px
+		background: $titles
+		margin-top: 30px
+
+h3
+	position: relative
+	display: inline-block
+	margin-bottom: 40px
+	font-family: $sunsus
+	font-size: 35px
+	+lh(41,35)
+	color: $main
+	text-transform: uppercase
+	&:after
+		content: ""
+		display: block
+		+center(x)
+		width: 89px
+		height: 3px
+		background: $main
+		margin-top: 25px
+
 ul,li
 	list-style-type: none
 	margin: 0
@@ -50,7 +88,7 @@ textarea
 
 section
 	position: relative
-input
+input[type="text"], input[type="email"], input[type="password"]
 	display: block
 	width: 340px
 	height: 45px

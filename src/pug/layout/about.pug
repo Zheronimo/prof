@@ -2,14 +2,13 @@ section.section.about
 	.about__left
 		svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_green.about__triangles
 			polygon(points="0,0 0,1000 1000,100")
-		.title.about__section-title
+		h2.about__section-title
 			| Обо мне
 		.user-about
 			.user-about__picture
 				img(src="static/img/user-picture.jpg", alt="")
-			.user-about__title
-				.subtitle
-					| Кто я
+			h3.user-about__title
+				| Кто я
 			.user-about__text
 				p  
 					| Я веб разработчик из Киева. Мне 30 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
@@ -20,8 +19,8 @@ section.section.about
 			polygon(points="0,100 1000,100 1000,0")
 		.about-data
 			.about-data__description.about-user-info
-				.about-user-info__title
-					.subtitle Чем я могу быть#[br]  вам полезен
+				h3.about-user-info__title
+					|Чем я могу быть#[br]  вам полезен
 				.about-user-info__text
 					p
 						| Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.

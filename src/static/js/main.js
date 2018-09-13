@@ -8,7 +8,7 @@ $(document).ready(function(){
 	$(".btn-nav__link_main").on("click",function(){
 		$(".welcome__user").css("transform", "rotateY(0deg)");
 		$(".welcome__autor").css("transform", "rotateY(180deg)");
-		$(".welcome__btn").css("display","block");
+		$(".welcome__btn").css("display","flex");
 	});
 	/* Parallax */
 	var section = $(".hero");

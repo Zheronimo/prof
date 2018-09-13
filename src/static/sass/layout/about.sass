@@ -14,12 +14,10 @@
 	left: 0
 	bottom: 100%
 .user-about__title, .about-user-info__title, .about__section-title
-	margin-bottom: 30px
+	margin: 40px 0 60px 0
 .about__section-title
 	background-image: url(../img/about_bg.png)
-	background-repeat: not-repeat
-	background-size: contain
-	background-position: 50% 50%
+	+contain
 .user-about__picture
 	text-align: center
 	margin-bottom: 10px
@@ -33,7 +31,10 @@
 		margin-bottom: 20px
 .about-user-info
 	margin-bottom: 50px
+	text-align: center
 .about-user-info__text
 	padding: 0 40px
+	p
+		text-align: left
 .about-data__content
 	padding: 0 40px

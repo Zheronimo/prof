@@ -1,0 +1,21 @@
+section.section.reviews
+	.title.reviews__title
+		|Что обо мне говорят
+	ul.reviews__list
+		li.reviews__item
+			.reviews__photo
+				img(src="static/img/ticher1.png").reviews__img
+			p.reviews__text
+				| Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+			.reviews__author
+				p.reviews__author-name Ковальчук Дмитрий
+				p.reviews__author-status — основатель Loftschool
+		li.reviews__item
+			.reviews__photo
+				img(src="static/img/ticher2.png").reviews__img
+			p.reviews__text
+				| Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+			.reviews__author
+				p.reviews__author-name Сабанцев Владимир
+				p.reviews__author-status — преподаватель
+	include feedback

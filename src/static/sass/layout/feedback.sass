@@ -1,0 +1,31 @@
+.feedback
+	max-width: 380px
+	margin: 0 auto
+	padding-top: 30px
+	border-radius: 5px
+	background-color: rgba(218, 219, 214, 0.6)
+.feedback-form
+	padding: 0 20px
+.feedback__title
+	position: relative
+	margin-bottom: 60px
+	font-family: $sunsus
+	font-size: 35px
+	+lh(40,35)
+	font-weight: 400
+	text-transform: uppercase
+	&::after
+		content: ""
+		position: absolute
+		left: 50%
+		bottom: -25px
+		transform: translateX(-50%)
+		display: block
+		background-color: $main
+		width: 89px
+		height: 3px
+
+.feedback-form__text
+	margin-bottom: 20px
+
+.feedback-form__btn

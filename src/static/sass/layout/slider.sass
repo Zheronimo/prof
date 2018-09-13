@@ -1,0 +1,47 @@
+.slider
+	display: flex
+	flex-direction: column
+	flex-wrap: wrap
+	max-height: 750px
+.slider__desc
+	height: 100%
+	display: flex
+	background: #ebefe2
+.slider__desc-info
+	margin: auto
+	text-align: center
+.slider__desc-title
+	position: relative
+	margin-bottom: 55px
+	font-family: $sunsus
+	font-size: 35px
+	text-transform: uppercase
+	&::after
+		content: ""
+		position: absolute
+		left: 50%
+		bottom: -25px
+		transform: translateX(-50%)
+		display: block
+		background-color: $main
+		width: 89px
+		height: 3px
+.slider__desc-skills
+	margin-bottom: 55px
+	color: $fernGreen
+	font-weight: 500
+.btn__slider
+	margin: 0 auto
+.slider__desc-icon
+	fill: #fff
+	margin-right: 10px
+.slider__display
+	flex: 4
+	max-height: 525px
+	background: #e1e4d7
+.slider__display-img
+	display: block
+	width: 100%
+	height: 100%
+.slider__btns
+	flex: 1

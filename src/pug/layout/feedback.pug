@@ -5,8 +5,10 @@
 		input(type="text" name="name" placeholder="Имя").feedback-form__name
 		input(type="email" name="email" placeholder="Email").feedback-form__email
 		textarea(name="", cols="40", rows="6" placeholder="Ваше сообщение").feedback-form__text
-	ul.btn-nav.feedback-form__btn
-		li.btn-nav__item
-			a(href="#").btn-nav__link Отправить
-		li.btn-nav__item
-			a(href="#").btn-nav__link Очистить
+		ul.btn-nav.feedback-form__btn
+			li.btn-nav__item
+				//- a(href="#").btn-nav__link Отправить
+				input(type="submit" value="Отправить").btn-nav__link 
+			li.btn-nav__item
+				//- a(href="#").btn-nav__link Очистить
+				input(type="reset" value="Очистить").btn-nav__link

@@ -1,11 +1,11 @@
+include humburger-menu
 section.section.hero(data-speed="2")
 	ul.socials
 		each item in socials
 			li.socials__item
 				a(href="#" class="socials__link socials__link_" + item)
 					+icon(item, "hero-icon")
-	a.humburger(href="#")
-		span.humburger__line
+	//- include humburger-menu
 	a.down-arrow(href="#")
 		+icon("arrow_down") 
 	.hero__title

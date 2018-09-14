@@ -19,6 +19,37 @@ $(document).ready(function(){
 				section.css("background-position", coords);
 	});
 });
+/* Активация меню */
+function toggleClass(className, keyWord) {
+	document.querySelector('.' + className).classList.toggle(className + '_' + keyWord);
+}
+var hamBtn = document.querySelector('.humburger-btn');
+var menuItem = [].slice.call(document.querySelectorAll('.ham-menu__item'));
+hamBtn.addEventListener('click', function(e) {
+		var timer = 0;
+
+		/* scroll ban then menu is active  */
+		if (hamBtn.className === 'humburger-btn') {
+				document.body.style.overflow = 'hidden';
+		} else {
+				document.body.style.overflow = 'initial';
+		}
+
+		toggleClass('ham-menu', 'active');
+		toggleClass('humburger-btn', 'active');
+
+		menuItem.forEach(function(item) {
+				/* appearing menu items whith delay */
+				if (item.className === 'ham-menu__item') {
+						setTimeout(function() {
+								item.classList.toggle('ham-menu__item_active')
+						}, timer);
+						timer += 150;
+				} else {
+						item.classList.toggle('ham-menu__item_active')
+				}
+		})
+})
 /* Инициализируем карту */
 function initMap(){
 	var element = document.getElementById("map");

@@ -1,0 +1,101 @@
+.humburger-menu__btn
+	position: absolute
+	top: 10px
+	right: 30px
+	z-index: 100
+.humburger-btn
+	padding: 7px
+	outline: none
+	cursor: pointer
+	background: transparent
+	border: none
+	&_active
+		+shift()
+		transition-delay: 0.6s
+		transform: rotate(45deg)
+		& .humburger-btn__line:nth-child(2)
+			width: 0
+		& .humburger-btn__line:nth-child(1),
+		& .humburger-btn__line:nth-child(3)
+			transition-delay: 0.3s
+		& .humburger-btn__line:nth-child(1)
+			transform: translateY(13px)
+		& .humburger-btn__line:nth-child(3)
+			transform: translateY(-13px) rotate(90deg)
+
+.humburger-btn__line
+	width: 35px
+	height: 5px
+	display: block
+	background-color: #fff
+	border-radius: 2px
+	+shift()
+	& + .humburger-btn__line
+		margin-top: 8px
+.ham-menu
+	+coverdiv
+	overflow: hidden
+	display: flex
+	justify-content: center
+	align-items: flex-start
+	padding-top: 300px
+	&::before 
+		content: ""
+		position: absolute
+		top: 0
+		width: 0
+		left: 0
+		height: 100%
+		z-index: 10
+		background-color: rgba($asparagus, 0.9)
+		display: block
+		transition: .7s
+	&::after
+		@extend .ham-menu::before
+		left: initial
+		right: 0
+	&_active
+		z-index: 20
+		&::before
+			width: 50%
+		&::after
+			width: 50%
+		.ham-menu__list
+			display: block
+			z-index: 30
+			transition: 1s
+.ham-menu__list
+	display: none
+	text-align: center
+	transition-delay: none
+.ham-menu__item
+	position: relative
+	display: block
+	left: -500%
+	&_active
+		animation: menu-item 1s forwards
+
+@keyframes menu-item 
+	0% 
+		left: -500%
+	100% 
+		left: 0
+    
+.ham-menu__link
+	color: #ffffff
+	font-family: $sunsus
+	font-size: 63px
+	+lh(66,63)
+	text-transform: uppercase
+	&::after
+		content: ""
+		width: 89px
+		height: 30px
+		background-color: transparent
+		border-bottom: 3px solid transparent
+		display: block
+		margin: 0 auto
+	&:hover
+		&::after
+			border-bottom: 3px solid #ffffff
+			transition: 0.4s

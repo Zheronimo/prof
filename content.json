@@ -11,5 +11,22 @@
 		}
 	],
 	"socials" : ["fb", "gh", "in"],
-	"nav_menu" : ["Мои работы", "Обо мне", "Блог", "Авторизация"]
+	"nav_menu" : [
+		{
+			"name": "Мои работы", 
+			"href": "works.html"
+		}, 
+		{
+			"name": "Обо мне",
+			"href": "about.html"
+		}, 
+		{
+			"name": "Блог",
+			"href": "blog.html"
+		}, 
+		{
+			"name":"Авторизация",
+			"href": "index.html"
+		}
+	]
 }

@@ -1,0 +1,28 @@
+.welcome__autor
+	.autor
+		h3.autor__title
+				| Авторизуйтесь
+		form.autor__form
+				.autor__login
+						input(type="text" name="login" placeholder="Логин")
+				.autor__pass
+						input(type="password" name="pass" placeholder="Пароль")
+				.autor__chack
+					label
+						input(type="checkbox") 
+						span Я человек
+				.autor__radio
+					p Вы точно не робот?
+					label
+						input(type="radio" value="Да" name="question")
+						| Да
+					label
+						input(type="radio" value="Не уверен" name="question")
+						| Не уверен
+				ul.btn-nav.login__btn-nav
+						each link in ["На главную","Войти"]
+								li.btn-nav__item
+										if(link == "На главную")
+												a(href="#").btn-nav__link.btn-nav__link_main=link
+										else
+												a(href="#").btn-nav__link=link

@@ -60,15 +60,16 @@ block content
 				ul.nav-menu.footer__nav-menu
 					each link in nav_menu
 						li.nav-menu__item
-							case link
-								when "Авторизация"
-									a(href="index.html").nav-menu__link=link
-								when "Блог"
-									a(href="blog.html").nav-menu__link=link
-								when "Обо мне"
-									a(href="about.html").nav-menu__link=link
-								when "Мои работы"
-									a(href="works.html").nav-menu__link=link
+							a(href=link.href).nav-menu__link=link.name
+							//- case link
+							//- 	when "Авторизация"
+							//- 		a(href="index.html").nav-menu__link=link
+							//- 	when "Блог"
+							//- 		a(href="blog.html").nav-menu__link=link
+							//- 	when "Обо мне"
+							//- 		a(href="about.html").nav-menu__link=link
+							//- 	when "Мои работы"
+							//- 		a(href="works.html").nav-menu__link=link
 				ul.socials
 					each item in socials
 						li.socials__item

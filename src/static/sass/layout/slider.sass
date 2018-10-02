@@ -1,24 +1,24 @@
-.slider
+.portfolio
 	display: flex
 	flex-direction: column
 	flex-wrap: wrap
 	max-height: 750px
-.slider__desc
+.portfolio__desc
 	height: 100%
 	display: flex
 	background: #ebefe2
-.slider__desc-info
+.portfolio__desc-info
 	margin: auto
 	text-align: center
-.slider__desc-title
+.portfolio__desc-title
 	margin-bottom: 55px
-.slider__desc-skills
+.portfolio__desc-skills
 	margin-bottom: 55px
 	color: $fernGreen
 	font-weight: 500
 .btn__slider
 	margin: 0 auto
-.slider__desc-icon
+.portfolio__desc-icon
 	fill: #fff
 	margin-right: 10px
 .slider__display
@@ -30,20 +30,51 @@
 	background: #e1e4d7
 .slider__display-img
 	display: block
-	max-width: 643px;
-	max-height: 416px;
-.slider__btns
-	flex: 1
+	max-width: 643px
+	max-height: 416px
+.portfolio__slider
+	flex: 2
 	display: flex
-.slider__btn
+.slider
 	display: block
 	width: 100%
 	height: 100%
-	&_left
-
-		background-image: url(../img/big-work.png)
-		+contain
-	&_right
-		background-image: url(../img/big-work.png)
-		+contain
-		
+	position: relative
+	overflow: hidden
+.slider__list
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	&_left .slider__item
+		top: 100%
+.slider__item
+	position: absolute
+	left: 0
+	width: 100%
+	height: 100%
+	top: -100%
+	&.active
+		top: 0%
+.slider__controls
+	+coverdiv
+	&_down
+		background-color: rgba(183, 188, 179, 0.7)
+	&_up
+		background-color: rgba(164, 170, 160, 0.7)	
+.slider__control
+	width: 43px
+	height: 27px
+	+center("both")
+	fill: #ffffff
+.slider__img
+	max-width: 100%
+	max-height: 100%
+	position: absolute
+	display: block
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	margin: auto

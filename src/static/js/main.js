@@ -134,7 +134,7 @@ function initMap(){
 					"elementType": "geometry",
 					"stylers": [
 							{
-									"color": "#f5f5f5"
+									"color": "#efefef"
 							},
 							{
 									"lightness": 20
@@ -185,7 +185,7 @@ function initMap(){
 					"elementType": "geometry",
 					"stylers": [
 							{
-									"color": "#ffffff"
+									"color": "#d7d7d7"
 							},
 							{
 									"lightness": 16

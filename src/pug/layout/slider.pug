@@ -1,19 +1,43 @@
-section.section.slider
-	.slider__desc
-		.slider__desc-info
-			h3.slider__desc-title
+section.section.portfolio
+	.portfolio__desc
+		.portfolio__desc-info
+			h3.sub-title.portfolio__desc-title
 				|Сайт школы онлайн <br>образования
-			.slider__desc-skills
+			.portfolio__desc-skills
 				|HTML , CSS, JAVASCRIPT
-			.slider__desc-btn
-				a(href="#").btn.btn__slider  
-					+icon("link", "slider__desc-icon")
+			.portfolio__desc-btn
+				a(href="#").btn.btn__portfolio  
+					+icon("link", "portfolio__desc-icon")
 					|Посмотреть сайт
 	.slider__display
 		ul.slider__display-list
 			li.slider__display-item
 				.slider__display-pic
 					img.slider__display-img(src="static/img/big-work.png")
-	.slider__btns
-		a.slider__btn.slider__btn_left(href="#")
-		a.slider__btn.slider__btn_right(href="#")
+	.portfolio__slider
+		.slider.slider_left
+			.slider__display
+				ul.slider__list
+					li.slider__item.active
+						img.slider__img(src="static/img/work-1.png", alt="")
+					li.slider__item
+						img.slider__img(src="static/img/work-2.png", alt="")
+					li.slider__item
+						img.slider__img(src="static/img/work-3.png", alt="")
+					li.slider__item
+						img.slider__img(src="static/img/work-4.png", alt="")
+			.slider__controls.slider__controls_down
+				+icon("portf_arrow_down","slider__control")
+		.slider.slider_left
+			.slider__display
+				ul.slider__list
+					li.slider__item
+						img.slider__img(src="static/img/work-1.png", alt="")
+					li.slider__item.active
+						img.slider__img(src="static/img/work-2.png", alt="")
+					li.slider__item
+						img.slider__img(src="static/img/work-3.png", alt="")
+					li.slider__item
+						img.slider__img(src="static/img/work-4.png", alt="")
+			.slider__controls.slider__controls_up 
+				+icon("portf_arrow_up","slider__control")

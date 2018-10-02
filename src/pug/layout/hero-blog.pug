@@ -1,0 +1,14 @@
+include humburger-menu
+section.section.hero(data-speed="2")
+	ul.socials
+		each item in socials
+			li.socials__item
+				a(href="#" class="socials__link socials__link_" + item)
+					+icon(item, "hero-icon")
+	.hero__title
+		.user.hero__user-block
+			.user__photo
+				.user__photo-avatar
+					img(src="static/img/avatar.jpg", alt="")
+			h2.user__name.user__name-blog Блог
+			.user__desc Статьи, которые я написал

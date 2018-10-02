@@ -22,12 +22,28 @@
 	fill: #fff
 	margin-right: 10px
 .slider__display
+	display: flex
+	justify-content: center
+	align-items: center
 	flex: 4
 	max-height: 525px
 	background: #e1e4d7
 .slider__display-img
 	display: block
-	width: 100%
-	height: 100%
+	max-width: 643px;
+	max-height: 416px;
 .slider__btns
 	flex: 1
+	display: flex
+.slider__btn
+	display: block
+	width: 100%
+	height: 100%
+	&_left
+
+		background-image: url(../img/big-work.png)
+		+contain
+	&_right
+		background-image: url(../img/big-work.png)
+		+contain
+		

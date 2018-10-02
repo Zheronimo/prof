@@ -28,5 +28,23 @@
 			"name":"Авторизация",
 			"href": "index.html"
 		}
+	],
+	"contacts" : [
+		{
+			"name":"skype_kdn",
+			"icon":"skype"
+		},
+		{
+			"name":"kirichenko.e.o@gmail.com",
+			"icon":"envelope"
+		},
+		{
+			"name":"+7931 200 93 24",
+			"icon":"phone"
+		},
+		{
+			"name":"Киев, ул. Ирпенская 63а",
+			"icon":"map_marker"
+		}
 	]
 }

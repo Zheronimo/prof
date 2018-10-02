@@ -10,6 +10,65 @@ $(document).ready(function(){
 		$(".welcome__autor").css("transform", "rotateY(180deg)");
 		$(".welcome__btn").css("display","flex");
 	});
+	/* Preloader */
+	var preloader = (function () {
+		var percentsTotal = 0,
+			preloader = $('.preloader');
+
+		var imgPath = $('*').map(function (ndx, element) {
+			var background = $(element).css('background-image'),
+				img = $(element).is('img'),
+				path = '';
+			
+			if (background != 'none') {
+				path = background.replace('url("', '').replace('")', '');
+			}
+
+			if (img) {
+				path = $(element).attr('src');
+			}
+
+			if (path) return path
+
+		});
+
+		var setPercents = function (total, current) {
+			var persents = Math.ceil(current / total * 100);
+
+			$('.preloader__percents').text(persents + '%');
+
+			if (persents >= 100) {
+				preloader.fadeOut();
+			}
+		}
+
+		var loadImages = function (images) {
+
+			if (!images.length) preloader.fadeOut();
+
+			images.forEach(function (img, i, images) {
+				var fakeImage = $('<img>', {
+					attr: {
+						src: img
+					}
+				});
+
+				fakeImage.on('load error', function () {
+					percentsTotal++;
+					setPercents(images.length, percentsTotal);
+				});
+			});
+		}
+
+		return {
+			init: function () {
+				var imgs = imgPath.toArray();
+
+				loadImages(imgs);
+			}
+		}
+	}());
+	preloader.init();
 	/* Parallax */
 	var section = $(".hero");
 	$(window).scroll(function(){
@@ -18,14 +77,13 @@ $(document).ready(function(){
 				coords = "50%" + scrollTop / speed + "px"
 				section.css("background-position", coords);
 	});
-});
-/* Активация меню */
-function toggleClass(className, keyWord) {
-	document.querySelector('.' + className).classList.toggle(className + '_' + keyWord);
-}
-var hamBtn = document.querySelector('.humburger-btn');
-var menuItem = [].slice.call(document.querySelectorAll('.ham-menu__item'));
-hamBtn.addEventListener('click', function(e) {
+	/* Активация меню */
+	function toggleClass(className, keyWord) {
+		document.querySelector('.' + className).classList.toggle(className + '_' + keyWord);
+	}
+	var hamBtn = document.querySelector('.humburger-btn');
+	var menuItem = [].slice.call(document.querySelectorAll('.ham-menu__item'));
+	hamBtn.addEventListener('click', function(e) {
 		var timer = 0;
 
 		/* scroll ban then menu is active  */
@@ -39,17 +97,19 @@ hamBtn.addEventListener('click', function(e) {
 		toggleClass('humburger-btn', 'active');
 
 		menuItem.forEach(function(item) {
-				/* appearing menu items whith delay */
-				if (item.className === 'ham-menu__item') {
-						setTimeout(function() {
-								item.classList.toggle('ham-menu__item_active')
-						}, timer);
-						timer += 150;
-				} else {
-						item.classList.toggle('ham-menu__item_active')
-				}
+			/* appearing menu items whith delay */
+			if (item.className === 'ham-menu__item') {
+					setTimeout(function() {
+							item.classList.toggle('ham-menu__item_active')
+					}, timer);
+					timer += 150;
+			} else {
+					item.classList.toggle('ham-menu__item_active')
+			}
 		})
-})
+	})
+});
+
 /* Инициализируем карту */
 function initMap(){
 	var element = document.getElementById("map");
@@ -246,7 +306,7 @@ function initMap(){
 			scaledSize: new google.maps.Size(42, 56)
 			},
 		// задаем  подпись маркеру
-		info: "<h1>Hey there</h1>"
+		// info: "<h1>Hey there</h1>"
 	});
 /* функция создания маркеров */
 	function	addMarker(properties){

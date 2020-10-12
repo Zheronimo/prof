@@ -1,43 +1,81 @@
-section.section.portfolio
-	.portfolio__desc
-		.portfolio__desc-info
-			h3.sub-title.portfolio__desc-title
-				|Сайт школы онлайн <br>образования
-			.portfolio__desc-skills
-				|HTML , CSS, JAVASCRIPT
-			.portfolio__desc-btn
-				a(href="#").btn.btn__portfolio  
-					+icon("link", "portfolio__desc-icon")
-					|Посмотреть сайт
-	.slider__display
-		ul.slider__display-list
-			li.slider__display-item
-				.slider__display-pic
-					img.slider__display-img(src="static/img/big-work.png")
-	.portfolio__slider
-		.slider.slider_left
-			.slider__display
-				ul.slider__list
-					li.slider__item.active
-						img.slider__img(src="static/img/work-1.png", alt="")
-					li.slider__item
-						img.slider__img(src="static/img/work-2.png", alt="")
-					li.slider__item
-						img.slider__img(src="static/img/work-3.png", alt="")
-					li.slider__item
-						img.slider__img(src="static/img/work-4.png", alt="")
-			.slider__controls.slider__controls_down
-				+icon("portf_arrow_down","slider__control")
-		.slider.slider_right
-			.slider__display
-				ul.slider__list
-					li.slider__item
-						img.slider__img(src="static/img/work-1.png", alt="")
-					li.slider__item.active
-						img.slider__img(src="static/img/work-2.png", alt="")
-					li.slider__item
-						img.slider__img(src="static/img/work-3.png", alt="")
-					li.slider__item
-						img.slider__img(src="static/img/work-4.png", alt="")
-			.slider__controls.slider__controls_up 
-				+icon("portf_arrow_up","slider__control")
+//- section.section.portfolio
+//- 	.portfolio__desc
+//- 		.portfolio__desc-info
+//- 			h3.sub-title.portfolio__desc-title
+//- 				|Сайт школы онлайн <br>образования
+//- 			.portfolio__desc-skills
+//- 				|HTML , CSS, JAVASCRIPT
+//- 			.portfolio__desc-btn
+//- 				a(href="#").btn.btn__portfolio  
+//- 					+icon("link", "portfolio__desc-icon")
+//- 					|Посмотреть сайт
+//- 	.slider__display
+//- 		ul.slider__display-list
+//- 			li.slider__display-item
+//- 				.slider__display-pic
+//- 					img.slider__display-img(src="static/img/work-2.png")
+//- 	.portfolio__slider
+//- 		.slider.slider_left
+//- 			.slider__display
+//- 				ul.slider__list
+//- 					li.slider__item.active
+//- 						img.slider__img(src="static/img/work-1.png", alt="")
+//- 					li.slider__item
+//- 						img.slider__img(src="static/img/work-2.png", alt="")
+//- 					li.slider__item
+//- 						img.slider__img(src="static/img/work-3.png", alt="")
+//- 					li.slider__item
+//- 						img.slider__img(src="static/img/work-4.png", alt="")
+//- 			.slider__controls.slider__controls_down
+//- 				+icon("portf_arrow_down","slider__control")
+//- 		.slider.slider_right
+//- 			.slider__display
+//- 				ul.slider__list
+//- 					li.slider__item
+//- 						img.slider__img(src="static/img/work-1.png", alt="")
+//- 					li.slider__item
+//- 						img.slider__img(src="static/img/work-2.png", alt="")
+//- 					li.slider__item.active
+//- 						img.slider__img(src="static/img/work-3.png", alt="")
+//- 					li.slider__item
+//- 						img.slider__img(src="static/img/work-4.png", alt="")
+//- 			.slider__controls.slider__controls_up 
+//- 				+icon("portf_arrow_up","slider__control")
+
+//- section.slider
+//- 	.slider__desc
+//- 		.slider__desc-info
+//- 			.slider__desc-title
+//- 				.block-title Сайт школы онлайн <br>образования
+//- 			.slider__desc-skills HTML , CSS, JAVASCRIPT
+//- 			.slider__desc-btn
+//- 				a.btn(href="")
+//- 					+icon("link",".slider__desc-icon")
+//- 					| Посмотреть сайт
+//- 	.slider__display
+//- 		img.slider__display-pic(src="static/img/work-2.png", alt="")
+//- 	.slider__btns
+//- 		a.slider__btn.slider__btn--prev
+		a.slider__btn.slider__btn--next
+
+
+section.slider__section
+	.slider#slider
+		each item in works
+			div(class="slide"+item.mod)
+				.slide__img
+					.slide-img(style=item.img)
+				.slide__desc
+					.work
+						.work__name.sub-title=item.name
+						.work__teach=item.descr
+						a.work__link.btn(href=item.link)
+							+icon("link", "work__icon") 
+							|Посмотреть
+		ul.slider-nav
+			li.prev
+				each item in works
+					button(class="control"+item.prev style=item.img)
+			li.next
+				each item in works
+					button(class="control"+item.next style=item.img)

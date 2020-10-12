@@ -1,13 +1,52 @@
 {
 	"skills" : [
 		{
-			"Frontend" : ["HTML", "CSS", "JavaScript\n&jQuery"]
+			"Frontend" : [
+				{
+					"name": "HTML",
+					"value": "75"
+				},
+				{ 
+					"name": "CSS",
+					"value": "75"
+				},
+				{ 
+					"name": "JavaScript\n&jQuery",
+					"value": "65"
+				}
+			]
 		},
 		{
-			"Backend" : ["PHP", "mySQL", "Node.js\n&npm"]
+			"Backend" : [
+				{
+					"name": "PHP",
+					"value": "50"
+				},
+				{
+					"name": "mySQL",
+					"value": "50"
+				},
+				{
+					"name": "Node.js\n&npm",
+					"value": "50"
+				}
+			]
 		},
 		{
-			"WorkFlow" : ["Git", "Gulp", "Bower"]
+			"WorkFlow" : [
+				{
+					"name": "Git",
+					"value": "50"
+				},
+				{
+					"name": "Gulp",
+					"value": "50"
+				},
+				{
+					"name": "Bower",
+					"value": "50"
+				}
+			]
 		}
 	],
 	"socials" : ["fb", "gh", "in"],
@@ -45,6 +84,44 @@
 		{
 			"name":"Киев, ул. Ирпенская 63а",
 			"icon":"map_marker"
+		}
+	],
+	"works" : [
+		{
+			"name": "Адаптивная верстка",
+			"descr": "HTML/Pug, CSS/Scss, JS/JQuery",
+			"img": "background-image: url('static/img/work-1.png')",
+			"mod": "",
+			"link": "#",
+			"prev": "",
+			"next": " active"
+		},
+		{
+			"name": "Адаптивная верстка",
+			"descr": "HTML/Pug, CSS/Scss, JS/JQuery",
+			"img": "background-image: url('static/img/work-2.png')",
+			"mod": "",
+			"link": "#",
+			"prev": "",
+			"next": ""
+		},
+		{
+			"name": "Адаптивная верстка",
+			"descr": "HTML/Pug, CSS/Scss, JS/JQuery",
+			"img": "background-image: url('static/img/work-3.png')",
+			"mod": "",
+			"link": "#",
+			"prev": " active",
+			"next": ""
+		},
+		{
+			"name": "Адаптивная верстка",
+			"descr": "HTML/Pug, CSS/Scss, JS/JQuery",
+			"img": "background-image: url('static/img/work-4.png')",
+			"mod": " active",
+			"link": "#",
+			"prev": "",
+			"next": ""
 		}
 	]
 }

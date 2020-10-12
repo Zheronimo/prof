@@ -1,81 +1,228 @@
-.portfolio
-	display: flex
-	flex-direction: column
-	flex-wrap: wrap
-	max-height: 750px
-.portfolio__desc
-	height: 100%
-	display: flex
-	background: #ebefe2
-.portfolio__desc-info
-	margin: auto
-	text-align: center
-.portfolio__desc-title
-	margin-bottom: 55px
-.portfolio__desc-skills
-	margin-bottom: 55px
-	color: $fernGreen
-	font-weight: 500
-.btn__portfolio
-	margin: 0 auto
-.portfolio__desc-icon
-	fill: #fff
-	margin-right: 10px
-.slider__display
-	display: flex
-	justify-content: center
-	align-items: center
-	flex: 4
-	max-height: 525px
-	background: #e1e4d7
-.slider__display-img
-	display: block
-	max-width: 643px
-	max-height: 416px
-.portfolio__slider
-	flex: 2
-	display: flex
+// .portfolio
+// 	display: flex
+// 	flex-direction: column
+// 	flex-wrap: wrap
+// 	max-height: 750px
+// .portfolio__desc
+// 	height: 100%
+// 	display: flex
+// 	background: #ebefe2
+// .portfolio__desc-info
+// 	margin: auto
+// 	text-align: center
+// .portfolio__desc-title
+// 	margin-bottom: 55px
+// .portfolio__desc-skills
+// 	margin-bottom: 55px
+// 	color: $fernGreen
+// 	font-weight: 500
+// .btn__portfolio
+// 	margin: 0 auto
+// .portfolio__desc-icon
+// 	fill: #fff
+// 	margin-right: 10px
+// .slider__display
+// 	display: flex
+// 	justify-content: center
+// 	align-items: center
+// 	flex: 4
+// 	max-height: 525px
+// 	background: #e1e4d7
+// .slider__display-img
+// 	display: block
+// 	max-width: 643px
+// 	max-height: 416px
+// .portfolio__slider
+// 	flex: 2
+// 	display: flex
+// .slider
+// 	display: block
+// 	width: 100%
+// 	height: 100%
+// 	position: relative
+// 	overflow: hidden
+// .slider__list
+// 	position: absolute
+// 	top: 0
+// 	left: 0
+// 	right: 0
+// 	bottom: 0
+// .slider_right .slider__item
+// 	top: 100%
+// .slider__item
+// 	position: absolute
+// 	left: 0
+// 	width: 100%
+// 	height: 100%
+// 	top: -100%
+// 	&.active
+// 		top: 0%
+// .slider__controls
+// 	+coverdiv
+// 	&_down
+// 		background-color: rgba(183, 188, 179, 0.7)
+// 	&_up
+// 		background-color: rgba(164, 170, 160, 0.7)	
+// .slider__control
+// 	width: 43px
+// 	height: 27px
+// 	+center("both")
+// 	fill: #ffffff
+// 	cursor: pointer
+// .slider__img
+// 	max-width: 100%
+// 	max-height: 100%
+// 	position: absolute
+// 	display: block
+// 	top: 0
+// 	left: 0
+// 	right: 0
+// 	bottom: 0
+// 	margin: auto
 .slider
-	display: block
+	height: 100vh
+	max-height: 750px
 	width: 100%
-	height: 100%
 	position: relative
-	overflow: hidden
-.slider__list
+	&-nav 
+		position: absolute
+		bottom: 0
+		right: 0
+		width: 50%
+		height: 33.33333%
+		margin: 0
+		padding: 0
+		list-style: none
+		display: table
+		z-index: 10
+		& .prev 
+			background-color: rgba(195, 189, 174, 0.7)
+			&::before 
+				background-image: url('../img/arrow_down.svg')
+				width: 45px
+				height: 30px
+			&::after 
+				background-color: rgba(195, 189, 174, 0.6)
+			& .control 
+				transform: translateY(-100%)
+				&.active 
+					z-index: 1
+					opacity: 1
+					visibility: visible
+					transform: translateY(0)
+		& .next
+			background-color: #ebe5db
+			&::before 
+				background-image: url('../img/arrow_down.svg')
+				width: 45px
+				height: 30px
+				transform: rotate(180deg)
+			&::after 
+				background-color: rgba(235, 229, 219, 0.6)
+			& .control 
+				transform: translateY(100%)
+				&.active 
+					z-index: 1
+					opacity: 1
+					visibility: visible
+					transform: translateY(0)
+		li 
+			display: table-cell
+			width: 50%
+			position: relative
+			z-index: 1
+			cursor: pointer
+			overflow: hidden
+			&::before 
+				display: block
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50% -50%)
+				background-size: 45px 30px
+				background-repeat: no-repeat
+				z-index: 2
+			&::after 
+				display: block
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				z-index: 1
+				transition: all 0.25s linear
+				opacity: 1
+.slide
 	position: absolute
 	top: 0
-	left: 0
-	right: 0
-	bottom: 0
-.slider_right .slider__item
-	top: 100%
-.slider__item
-	position: absolute
 	left: 0
 	width: 100%
 	height: 100%
-	top: -100%
-	&.active
-		top: 0%
-.slider__controls
-	+coverdiv
-	&_down
-		background-color: rgba(183, 188, 179, 0.7)
-	&_up
-		background-color: rgba(164, 170, 160, 0.7)	
-.slider__control
-	width: 43px
-	height: 27px
-	+center("both")
-	fill: #ffffff
-	cursor: pointer
-.slider__img
-	max-width: 100%
-	max-height: 100%
+	visibility: hidden
+	opacity: 0
+	transition: 0.5s 0.25s linear
+	&__img 
+		position: absolute
+		top: 0
+		right: 0
+		width: 50%
+		height: 66.66667%
+		background-color: #ebe5db
+	&__desc
+		position: absolute
+		top: 0
+		left: 0
+		width: 50%
+		height: 100%
+		background-color: #f4f0e9
+	&-img 
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-repeat: no-repeat
+		background-position: center
+		background-size: contain
+	&.active 
+		visibility: visible
+		opacity: 1
+.work
 	position: absolute
-	display: block
+	left: 0
+	width: 100%
+	top: 50%
+	text-align: center
+	padding: 0 10%
+	transform: translateY(-50%)
+	&__name
+		// max-width: 500px
+		margin-bottom: 55px
+	&__teach 
+		margin-bottom: 55px
+		color: $fernGreen
+		font-weight: 500
+	&__link 
+		margin: 0 auto
+	&__icon 
+		fill: #fff
+		margin-right: 10px
+.control
+	position: absolute
 	top: 0
 	left: 0
-	right: 0
-	bottom: 0
-	margin: auto
+	width: 100%
+	height: 100%
+	visibility: hidden
+	background-color: transparent
+	background-repeat: no-repeat
+	background-position: center
+	background-size: 90%
+	z-index: -1
+	opacity: 0
+	transition: 0.5s 0.25s linear
+	
+	
+	

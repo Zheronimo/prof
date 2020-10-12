@@ -32,17 +32,18 @@ section.section.about
 								.skill-section
 									.skill-section__title= skillName
 									ul.skill-section__list
-										each skillTitle in skillsArray
+										each item in skillsArray
 											li.skills-section__item
 												.skill
 													svg(viewbox="0 0 110 110" preserveAspectRatio="none").skill__circle
 														circle(cx="50%" cy="50%" r="45" fill="none").skill__circle-above
-														case skillTitle
-															when "HTML"
-																circle(cx="50%" cy="50%" r="45" fill="none" transform="rotate(-90 55 55)").skill__circle-under.skill__circle-75
-															when "CSS"
-																circle(cx="50%" cy="50%" r="45" fill="none" transform="rotate(-90 55 55)").skill__circle-under.skill__circle-75
-															default
-																circle(cx="50%" cy="50%" r="45" fill="none" transform="rotate(-90 55 55)").skill__circle-under.skill__circle-50
-													.skill__name= skillTitle
+														circle(cx="50%" cy="50%" r="45" fill="none" transform="rotate(-90 55 55)" class="skill__circle-under skill__circle-"+item.value)
+														//- case skillTitle
+														//- 	when "HTML"
+														//- 		circle(cx="50%" cy="50%" r="45" fill="none" transform="rotate(-90 55 55)").skill__circle-under.skill__circle-75
+														//- 	when "CSS"
+														//- 		circle(cx="50%" cy="50%" r="45" fill="none" transform="rotate(-90 55 55)").skill__circle-under.skill__circle-75
+														//- 	default
+														//- 		circle(cx="50%" cy="50%" r="45" fill="none" transform="rotate(-90 55 55)").skill__circle-under.skill__circle-50
+													.skill__name= item.name
 													

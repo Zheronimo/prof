@@ -8,17 +8,19 @@
 				.autor__pass
 						input(type="password" name="pass" placeholder="Пароль")
 				.autor__chack
-					label
+					label.custom-chackbox
 						input(type="checkbox") 
 						span Я человек
 				.autor__radio
 					p Вы точно не робот?
-					label
+					label.custom-radio
 						input(type="radio" value="Да" name="question")
-						| Да
-					label
+						span.custom-radio__fake
+						span.custom-radio__text Да
+					label.custom-radio
 						input(type="radio" value="Не уверен" name="question")
-						| Не уверен
+						span.custom-radio__fake
+						span.custom-radio__text Не уверен
 				ul.btn-nav.login__btn-nav
 						each link in ["На главную","Войти"]
 								li.btn-nav__item

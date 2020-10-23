@@ -61,6 +61,14 @@ $(document).ready(function(){
 		});
 	});
 
+	$('.blog-menu__link').on('click', function(event){
+		event.preventDefault();
+		$(".blog-menu__item").removeClass('blog-menu__item_active');
+		console.log($(this));
+		$(this).closest(".blog-menu__item").addClass('blog-menu__item_active');
+		console.log($(this).attr('data-article'));
+	});
+
 	/* (function () {
 		// Плавная прокрутка по ссылке
 		var smooth_scrolling_to_anchor = {
@@ -88,7 +96,7 @@ $(document).ready(function(){
 			},
 		}
 		smooth_scrolling_to_anchor.init();
-	}()); */
+	}());
 
 	/* SLIDER */
 	(function () {
@@ -497,10 +505,6 @@ up.on('click', function(event) {
 		$(this).addClass('active');
 	});
 });*/
-
-
-
-
 
 
 /*slideShow*/

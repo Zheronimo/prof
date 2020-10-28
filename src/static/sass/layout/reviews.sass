@@ -4,6 +4,9 @@
 	background-image: url(../img/bg.png)
 	+cover
 	text-align: center
+	+tablets()
+		height: auto
+		padding-bottom: 400px
 
 .reviews__title
 	background-image: url(../img/about_bg.png)
@@ -13,12 +16,19 @@
 	display: flex
 	justify-content: center
 	margin-bottom: 70px
+	+tablets()
+		flex-direction: column
+		align-items: center
+
 .reviews__item
 	max-width: 376px
 	color: #5d5a55
 	font-style: italic
 .reviews__item:not(:first-child)
 	margin-left: 25px
+	+tablets()
+		margin-left: 0
+		margin-top: 40px
 .reviews__photo
 	width: 77px
 	height: 77px

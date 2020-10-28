@@ -95,8 +95,13 @@
 		list-style: none
 		display: table
 		z-index: 10
+		+tablets()
+			height: 15%
+			width: 100%
 		& .prev 
 			background-color: rgba(195, 189, 174, 0.7)
+			&:hover::before
+				opacity: 1
 			&::before 
 				background-image: url('../img/arrow_down.svg')
 				width: 45px
@@ -112,6 +117,8 @@
 					transform: translateY(0)
 		& .next
 			background-color: #ebe5db
+			&:hover::before
+				opacity: 1
 			&::before 
 				background-image: url('../img/arrow_down.svg')
 				width: 45px
@@ -143,6 +150,8 @@
 				background-size: 45px 30px
 				background-repeat: no-repeat
 				z-index: 2
+				opacity: 0.7
+				transition: all 0.2s linear
 			&::after 
 				display: block
 				content: ''
@@ -163,6 +172,8 @@
 	visibility: hidden
 	opacity: 0
 	transition: 0.5s 0.25s linear
+	+tablets()
+		height: 85%
 	&__img 
 		position: absolute
 		top: 0
@@ -170,6 +181,9 @@
 		width: 50%
 		height: 75%
 		background-color: #ebe5db
+		+tablets()
+			height: 60%
+			width: 100%
 	&__desc
 		position: absolute
 		top: 0
@@ -177,18 +191,28 @@
 		width: 50%
 		height: 100%
 		background-color: #f4f0e9
+		+tablets()
+			top: 60%
+			height: 40%
+			width: 100%
 	&-img 
 		position: absolute
 		top: 10px
 		left: 0
 		width: 100%
-		height: 97%
+		height: 95%
 		background-repeat: no-repeat
 		background-position: center
 		background-size: contain
 	&.active 
 		visibility: visible
 		opacity: 1
+		& .slide__desc .work .work__name
+			animation: transitionUp 2s ease
+		& .slide__desc .work .work__teach
+			animation: scale 2s ease
+		& .slide__desc .work .work__link
+			animation: transitionBottom 2s ease
 .work
 	position: absolute
 	left: 0
@@ -200,10 +224,18 @@
 	&__name
 		// max-width: 500px
 		margin-bottom: 55px
+		+tablets()
+		margin-bottom: 40px
+			font-size: 21px
+		&::after
+			+tablets()
+				margin-top: 15px
 	&__teach 
 		margin-bottom: 55px
 		color: $fernGreen
 		font-weight: 500
+		+tablets()
+			margin-bottom: 15px
 	&__link 
 		margin: 0 auto
 	&__icon 
@@ -226,4 +258,20 @@
 	transition: 0.5s 0.25s linear
 	
 	
-	
+@keyframes scale
+	0%
+		transform: scale(0)
+	100%
+		transform: scale(1)
+
+@keyframes transitionUp
+	0%
+		transform: translateY(-100px)
+	100%
+		transform: translateY(0)
+
+@keyframes transitionBottom
+	0%
+		transform: translateY(100px)
+	100%
+		transform: translateY(0)

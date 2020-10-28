@@ -8,17 +8,58 @@
 	padding: 30px
 	background: rgba(55, 62, 66, 0.85)
 	font-weight: 300
-	& div + div
-		border-left: 1px solid rgba(255,255,255, 0.2)
-		padding-left: 30px
+	+tablets()
+		flex-direction: column
+		padding-top: 0
+		padding-bottom: 0
+		& > *
+			padding: 20px 0
+			text-align: center
+	+leptop()
+		flex-wrap: wrap
 .footer__nav-menu
 	margin-bottom: 30px
+	+tablets()
+		display: flex
+		justify-content: space-around
+		margin-bottom: 20px
+	+leptop()
+		flex-wrap: nowrap
+	& .nav-menu__item
+		+tablets()
+			margin: 0
+	& .nav-menu__link
+		+leptop()
+			white-space: nowrap
 .footer__left
 	flex: 1 1 30%
+	border-right: 1px solid rgba(255,255,255, 0.2)
+	padding-right: 20px
+	+leptop()
+		flex: 1 1 30%
+	+tablets()
+		border-right: none
+		padding-left: 0
+		border-bottom: 1px solid rgba(255,255,255, 0.2)
 .footer__middle
+	padding: 0 20px
 	flex: 1 1 40%
+	border-right: 1px solid rgba(255,255,255, 0.2)
+	+leptop()
+		flex: 1 1 30%
+		border-right: none
+		padding-right: 0
+	+tablets
+		padding: 20px 0
+		border-bottom: 1px solid rgba(255,255,255, 0.2)
 .footer__right	
 	flex: 1 1 30%
+	padding-left: 20px
+	+leptop()
+		flex: 1 1 100%
+		margin-top: 20px
+	+tablets()
+		margin-top: 0
 	& p q
 		font-style: italic
 .footer-icon:hover
@@ -28,3 +69,7 @@
 	padding: 10px 0
 	opacity: 0.85
 	text-align: center
+.footer__socials
+	+tablets()
+		display: flex
+		justify-content: center

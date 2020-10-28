@@ -8,16 +8,7 @@ footer.footer
 				each link in nav_menu
 					li.nav-menu__item
 						a(href=link.href).nav-menu__link=link.name
-						//- case link
-						//- 	when "Авторизация"
-						//- 		a(href="index.html").nav-menu__link=link
-						//- 	when "Блог"
-						//- 		a(href="blog.html").nav-menu__link=link
-						//- 	when "Обо мне"
-						//- 		a(href="about.html").nav-menu__link=link
-						//- 	when "Мои работы"
-						//- 		a(href="works.html").nav-menu__link=link
-			ul.socials
+			ul.socials.footer__socials
 				each item in socials
 					li.socials__item
 						a(href="#" class="socials__link socials__link_" + item)

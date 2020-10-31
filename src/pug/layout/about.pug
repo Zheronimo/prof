@@ -1,7 +1,9 @@
 section.section.about
-	.about__left
-		svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_green.about__triangles
+	svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_green.about__triangles
 			polygon(points="0,0 0,1000 1000,100")
+	svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_cararra.about__triangles.about__triangles_right
+			polygon(points="0,100 1000,100 1000,0")
+	.about__left
 		h2.title.about__section-title
 			| Обо мне
 		.user-about
@@ -15,8 +17,8 @@ section.section.about
 				p  
 					| Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
 	.about__right
-		svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_cararra.about__triangles
-			polygon(points="0,100 1000,100 1000,0")
+		//- svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_cararra.about__triangles
+		//- 	polygon(points="0,100 1000,100 1000,0")
 		.about-data
 			.about-data__description.about-user-info
 				h3.sub-title.about-user-info__title

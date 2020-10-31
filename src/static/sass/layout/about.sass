@@ -1,5 +1,7 @@
 .about
 	display: flex
+	+leptop()
+		flex-direction: column
 .about__left, .about__right
 	position: relative
 .about__left
@@ -11,13 +13,22 @@
 	background: $cararra	
 .about__triangles
 	position: absolute
+	width: 50%
 	left: 0
 	bottom: 100%
+	+leptop()
+		fill: $greenWhite
+	&_right
+		left: 50%
 .user-about__title, .about-user-info__title, .about__section-title
 	margin: 40px 0 60px 0
+	+tablets()
+		margin: 20px 0
 .about__section-title
 	background-image: url(../img/about_bg.png)
 	+contain
+	+leptop()
+		margin-bottom: 50px
 .user-about__picture
 	text-align: center
 	margin-bottom: 10px

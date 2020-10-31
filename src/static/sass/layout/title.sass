@@ -2,15 +2,48 @@
 	position: relative
 	display: inline-block
 	padding: 32px 60px
+	margin: 70px 0
 	font-family: $sunsus
+	font-size: 63px
+	+lh(66,63)
 	color: $titles
 	text-transform: uppercase
-	font-size: 63px
-	font-weight: 400
-	+lh(66,63)
-	&::after
+	&:after
+		content: ""
+		display: block
+		+center(x)
+		width: 89px
+		height: 3px
+		background: $titles
+		margin-top: 30px
 		+tablets()
 			margin-top: 20px
+	+leptop()
+		font-size: 47px
+		margin: 45px 0
+		padding: 20px 60px
 	+tablets()
 		font-size: 35px
 		margin: 20px 0
+
+.sub-title
+	position: relative
+	display: inline-block
+	margin-bottom: 40px
+	font-family: $sunsus
+	font-size: 35px
+	+lh(41,35)
+	color: $main
+	text-transform: uppercase
+	+tablets()
+		font-size: 21px
+	&:after
+		content: ""
+		display: block
+		+center(x)
+		width: 89px
+		height: 3px
+		background: $main
+		margin-top: 25px
+		+tablets()
+			margin-top: 10px

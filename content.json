@@ -88,38 +88,38 @@
 	],
 	"works" : [
 		{
-			"name": "Адаптивная верстка",
-			"descr": "HTML/Pug, CSS/Scss, JS/JQuery",
-			"img": "background-image: url('static/img/work-1.png')",
+			"name": "Автосервис",
+			"descr": "HTML, CSS, JS/JQuery",
+			"img": "background-image: url('static/img/autoholl.png')",
 			"mod": "",
-			"link": "#",
+			"link": "/autoholl",
 			"prev": "",
 			"next": " active"
 		},
 		{
-			"name": "Адаптивная верстка",
+			"name": "BabyToys - интернет магазин",
 			"descr": "HTML/Pug, CSS/Scss, JS/JQuery",
-			"img": "background-image: url('static/img/work-2.png')",
+			"img": "background-image: url('static/img/babytoys.png')",
 			"mod": "",
-			"link": "#",
+			"link": "/babyToys",
 			"prev": "",
 			"next": ""
 		},
 		{
-			"name": "Адаптивная верстка",
-			"descr": "HTML/Pug, CSS/Scss, JS/JQuery",
-			"img": "background-image: url('static/img/work-3.png')",
+			"name": "Курсы повышения знаний",
+			"descr": "HTML, CSS/Sass, JS/JQuery",
+			"img": "background-image: url('static/img/course.png')",
 			"mod": "",
-			"link": "#",
+			"link": "/courses",
 			"prev": " active",
 			"next": ""
 		},
 		{
-			"name": "Адаптивная верстка",
+			"name": "POSH - сайт-галерея",
 			"descr": "HTML/Pug, CSS/Scss, JS/JQuery",
-			"img": "background-image: url('static/img/work-4.png')",
+			"img": "background-image: url('static/img/posh.png')",
 			"mod": " active",
-			"link": "#",
+			"link": "/posh",
 			"prev": "",
 			"next": ""
 		}

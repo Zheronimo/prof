@@ -1,11 +1,17 @@
 <?php 
-	$recepient = '';
+	$recepient = 'kirichenko.e.o@gmail.com';
 	$sitename = 'portfolio';
 
 	$name = trim($_POST['name']);
-	$phone = trim($_POST['tel']);
-	$city = trime($_POST['cityname']);
-	$massege = "Имя: $name \nТелефон: $phone \nГород: $city";
+	$email = trim($_POST['email']);
+	$massege = trime($_POST['massege']);
+	$user_massege = "Имя: $name \nТелефон: $phone \nГород: $massege";
 
 	$pagetitle = "Новая заявка с сайта \"$sitename\"";
-	mail($recepient, $pagetitle, $massege, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+
+	if (!empty($_POST['name']) AND !empty($_POST['email']) AND !empty($_POST['massege'])) {
+		mail($recepient, $pagetitle, $user_massege, "Content-type: text/plain; charset=\"utf-8\"\n From: $recepient");
+	} else {
+		
+	}
+	

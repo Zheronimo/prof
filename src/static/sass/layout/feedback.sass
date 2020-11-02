@@ -4,12 +4,14 @@
 	padding-top: 30px
 	border-radius: 5px
 	background-color: rgba(218, 219, 214, 0.6)
+	input._error, textarea._error
+		box-shadow: 0 0 0 1px $red
 .feedback-form
 	padding: 0 20px
 	&__name, &__email, &__text
 		+shift()
 	&__name:focus, &__email:focus, &__text:focus
-		box-shadow: 0 0 0 2px $asparagus
+		box-shadow: 0 0 0 1px $asparagus
 		+shift()
 	&__text
 		outline: none

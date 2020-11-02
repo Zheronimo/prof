@@ -241,6 +241,89 @@ $(document).ready(function(){
 		slider.init();
 	}());
 
+	/* FORM  */
+	const form = document.querySelector('.feedback-form');
+	form.addEventListener('submit', formSend);
+	// Функция отправки формы
+	async function formSend(e) {
+		e.preventDefault();
+
+		let error = formValidate(form);
+
+		let formDate = new FormData(form);
+
+		if (error === 0) {
+			let response = await fetch('mail.php', {
+				method: 'POST',
+				body: formDate
+			});
+			if (response.ok) {
+				let result = await response.json();
+				alert(result.message);
+				formPreview.innerHTML = '';
+				form.reset();
+			}else {
+				alert('Ошибка')
+			}
+		} else {
+			alert('Заполните обязательные поля');
+		}
+	}
+	// Функция валидации формы
+	function formValidate(form){
+		let error = 0;
+		let formReq = document.querySelectorAll('._req');
+		// Класс ._req добавляется ко всем полям которые должны быть заполнены перед отправкой формы
+
+		for(let index = 0; index < formReq.length; index++){
+			const input = formReq[index];
+			formRemoveError(input);
+
+			if (input.classList.contains('feedback-form__email')){
+				if (emailTest(input)) {
+					formAddError(input);
+					error++;
+				}
+			} else {
+				if (input.value === '') {
+					formAddError(input);
+					error++;
+				}
+			}
+		}
+		return error;
+	}
+	// Функция добавления класса _error
+	function formAddError(input) {
+		// input.parentElement.classList.add('_error'); родителю добавляется в случае кастомных checkbox, radiobutton
+		input.classList.add('_error');
+	}
+	// Функция удаления класса _error
+	function formRemoveError(input) {
+		// input.parentElement.classList.remove('_error');
+		input.classList.remove('_error');
+	}
+	// Функция теста email
+	function emailTest(input) {
+		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+	}
+
+	// $(".feedback-form").submit(function(){
+	// 	let th = $(this);
+	// 	$.ajax({
+	// 		type: "POST",
+	// 		url: "mail.php",
+	// 		data: th.serialize()
+	// 	}).done(function(){
+	// 		alert("Thank you!");
+	// 		setTimeout(function(){
+	// 			// Done function
+	// 			th.trigger("reset");
+	// 		}, 1000);
+	// 	});
+	// 	return false;
+	// });
+
 });
 
 /* Инициализируем карту */

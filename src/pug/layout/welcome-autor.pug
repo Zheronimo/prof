@@ -22,9 +22,7 @@
 						span.custom-radio__fake
 						span.custom-radio__text Не уверен
 				ul.btn-nav.login__btn-nav
-						each link in ["На главную","Войти"]
-								li.btn-nav__item
-										if(link == "На главную")
-												a(href="#").btn-nav__link.btn-nav__link_main=link
-										else
-												a(href="#").btn-nav__link=link
+					li.btn-nav__item
+						a(href="#").btn-nav__link.btn-nav__link_main На главную
+					li.btn-nav__item
+						a(href="admin.html").btn-nav__link Войти

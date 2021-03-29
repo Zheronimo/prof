@@ -1,10 +1,6 @@
 include humburger-menu
 section.section.hero(data-speed="2")
-	ul.socials
-		each item in socials
-			li.socials__item
-				a(href="#" class="socials__link socials__link_" + item)
-					+icon(item, "hero-icon")
+	include socials
 	.hero__title
 		.user.hero__user-block
 			.user__photo

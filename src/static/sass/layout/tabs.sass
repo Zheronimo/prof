@@ -1,0 +1,92 @@
+.tabs
+	position: relative
+	&__list
+		display: flex
+		background-color: #f0efe9
+	&__nav
+		padding: 24px 70px
+		border-right: 3px solid #fff
+		color: rgba(86, 99, 88, 0.8)
+		text-transform: uppercase
+		cursor: pointer
+		+shift()
+		&--active
+			background-color: #fff
+	&__content
+		display: none
+		position: relative
+		padding: 50px 30px
+		&--active 
+			display: block
+	&__title 
+		font-size: 21px
+		margin-bottom: 45px
+	&__text
+		display: block
+		margin-bottom: 15px
+		font-size: 16px
+		color: $main
+	&__form .tabs__input 
+		max-width: 300px
+		height: 45px
+		border-radius: 5px
+		&::placeholder
+			color: rgba(55, 62, 66, 0.5)
+	&__area
+		margin-bottom: 30px
+		max-width: 500px
+		border-radius: 5px
+		&::placeholder
+			color: rgba(55, 62, 66, 0.5)
+	&__btn 
+		color: #fff
+		border-radius: 5px
+	&__skills 
+		margin-bottom: 30px
+		display: flex
+		align-items: start
+		justify-content: start
+	&-skill
+		margin-right: 200px
+		&__title 
+			font-size: 16px
+			font-weight: 600
+			margin-bottom: 20px
+		&__list 
+			margin-bottom: 25px
+			padding-left: 20px
+			& > *
+				&:not(:last-child)
+					margin-bottom: 10px
+
+		&__item 
+			display: flex
+			align-items: center
+			font-size: 16px
+			& > *
+				flex: 0 0 150px 
+		&__value 
+			padding: 10px 0
+			width: 45px
+			border: none
+			border-radius: 5px
+			text-align: center
+		&__percent
+			margin-left: 10px
+	input:focus, textarea:focus
+		box-shadow: 0 0 0 2px $asparagus
+		outline: none
+
+.file-upload
+	display: flex
+	align-items: center
+	margin-bottom: 160px
+	&__text
+		margin-left: 10px
+		color: $asparagus
+	&__icon 
+		+size(36px)
+	input[type="file"]
+		display: none
+	&__label 
+		cursor: pointer

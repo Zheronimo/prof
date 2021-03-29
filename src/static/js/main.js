@@ -1,10 +1,15 @@
 $(document).ready(function(){
+	svg4everybody({});
 
 	// ==============================
 	// Check scrollbar width
 	// ==============================
-	var getScrollbarWidth = function (){
-		var style = {"max-height":"100px", "overflow":"scroll", "position":"absolute"},
+	let getScrollbarWidth = function (){
+		let style = {
+			"max-height":"100px", 
+			"overflow":"scroll", 
+			"position":"absolute"
+		},
 			wrapper = $("<div id='scroll_bar_check_A'></div>").css(style),
 			inner = $("<div id='scroll_bar_check_B'></div>"),
 			stretcher = $("<img src='/static/img/force-scroll.png'/>"),
@@ -29,6 +34,8 @@ $(document).ready(function(){
 	window.hm.tabletSize = 768 - window.hm.scrollBarWidth;
 	window.hm.resizeLimit = 2000 - window.hm.scrollBarWidth;
 
+	let scrollWidth = window.innerWidth - document.body.offsetWidth +'px';
+
 
 	$(".welcome__btn").on("click",function(event){
 		event.preventDefault();
@@ -45,6 +52,30 @@ $(document).ready(function(){
 	/*Вызываем preloader */
 	preloader.init();
 
+	/* Табы */
+
+	const tabs = document.querySelector('.tabs');
+	const tabsNav = document.querySelectorAll('.tabs__nav');
+	const tabsContent = document.querySelectorAll('.tabs__content');
+	if (tabs) {
+		tabs.addEventListener('click', (e) => {
+			if (e.target.classList.contains('tabs__nav')) {
+				const tabsPath =e.target.dataset.tabsPath;
+				tabsHendler(tabsPath);
+			}
+		});
+	}
+	const tabsHendler = (path) => {
+		tabsNav.forEach(item => {
+			item.classList.remove('tabs__nav--active');
+		});
+		document.querySelector(`[data-tabs-path=${path}]`).classList.add('tabs__nav--active');
+
+		tabsContent.forEach(item => {
+			item.classList.remove('tabs__content--active');
+		});
+		document.querySelector(`[data-tabs-target=${path}]`).classList.add('tabs__content--active');
+	} 
 
 	/* Parallax */
 	var section = $(".hero");
@@ -165,7 +196,6 @@ $(document).ready(function(){
 			};
 			blogNavigation();
 		};
-
 	
 	/* SLIDER */
 	(function () {
@@ -247,10 +277,13 @@ $(document).ready(function(){
 	// Функция отправки формы
 	async function formSend(e) {
 		e.preventDefault();
-
+		
 		let error = formValidate(form);
 
 		let formDate = new FormData(form);
+
+		let popup = document.querySelector('.popup');
+		let popupError = document.querySelector('.popup--error');
 
 		if (error === 0) {
 			let response = await fetch('mail.php', {
@@ -260,15 +293,17 @@ $(document).ready(function(){
 			if (response.ok) {
 				let result = await response.json();
 				alert(result.message);
+				popupOpen(popup);
 				formPreview.innerHTML = '';
 				form.reset();
 			}else {
-				alert('Ошибка')
+				popupOpen(popupError);
 			}
 		} else {
 			alert('Заполните обязательные поля');
 		}
 	}
+	
 	// Функция валидации формы
 	function formValidate(form){
 		let error = 0;
@@ -308,22 +343,24 @@ $(document).ready(function(){
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 	}
 
-	// $(".feedback-form").submit(function(){
-	// 	let th = $(this);
-	// 	$.ajax({
-	// 		type: "POST",
-	// 		url: "mail.php",
-	// 		data: th.serialize()
-	// 	}).done(function(){
-	// 		alert("Thank you!");
-	// 		setTimeout(function(){
-	// 			// Done function
-	// 			th.trigger("reset");
-	// 		}, 1000);
-	// 	});
-	// 	return false;
-	// });
-
+	
+	// Функция вызова popup
+	function popupOpen(popup){
+		popup.classList.add('open');
+		document.body.style.overflow = 'hidden';
+		document.body.style.paddingRight = scrollWidth; // добавляем ширину скрола, чтобы небыло прижка сайта
+	}
+	
+	let popupBtn = document.querySelectorAll('.popup__btn');
+	// Функция закрытия popup
+	popupBtn.forEach(function(item){
+		item.addEventListener('click', function(){
+			this.closest(".popup").classList.remove("open");
+			document.body.style.overflow = 'auto';
+			document.body.style.paddingRight = 0; // убираем ширину скрола, чтобы небыло прижка сайта
+			form.reset();
+		});
+	});
 });
 
 /* Инициализируем карту */
@@ -362,7 +399,7 @@ function initMap(){
 					"elementType": "geometry.fill",
 					"stylers": [
 							{
-									"color": "#ffffff"
+									"color": "#d7d7d7"
 							},
 							{
 									"lightness": 17
@@ -374,7 +411,7 @@ function initMap(){
 					"elementType": "geometry.stroke",
 					"stylers": [
 							{
-									"color": "#ffffff"
+									"color": "#fff"
 							},
 							{
 									"lightness": 29
@@ -389,7 +426,7 @@ function initMap(){
 					"elementType": "geometry",
 					"stylers": [
 							{
-									"color": "#ffffff"
+									"color": "#d7d7d7"
 							},
 							{
 									"lightness": 18
@@ -529,7 +566,8 @@ function initMap(){
 	function	addMarker(properties){
 		var marker = new google.maps.Marker({
 			position: properties.coordinates,
-			map: myMap
+			map: myMap,
+			animation: google.maps.Animation.BOUNCE
 		});
 		if(properties.image){
 			marker.setIcon(properties.image);

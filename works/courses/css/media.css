@@ -1,0 +1,124 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.tizer .tizer_item > div {
+		display: block;
+		text-align: center;
+	}
+	.tizer .tizer_icon .my {
+		margin-bottom: 10px;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+	
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	.logo, .contacts,.header_title {
+		-ms-text-align-last: center;
+    	text-align-last: center;
+	}
+	.logo {
+		margin-bottom: 15px;
+	}
+	.header_title h1 {
+		font-size: 40px;
+	}
+	.header .header_title p {
+		font-size: 25px;
+	}
+	
+	.about_item {
+		margin-bottom: 25px;
+	}
+	.about_text h3 {
+		font-size: 25px;
+	}
+	.about_item .about_icon .my {
+		line-height: 100px;
+	}
+	.request p {
+		padding: 10px 10px;
+		font-size: 18px;
+	}
+	.address .address_title h2 {
+		margin-bottom: 20px;
+	}
+	.address .address_title .tabs .tab {
+		padding: 0 25px;
+	}
+}
+@media only screen and (max-width : 600px) {
+	.about_item {
+		width: 100%;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	.about_item .about_icon .my {
+		line-height: 100px;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.header_title h1 {
+		font-size: 30px;
+		text-align: center;
+	}
+	.header .header_title p {
+		font-size: 20px;
+	}
+	.header .top_line .contacts .wrapper a {
+		font-size: 30px;
+	}
+	.header .header_discounts .tabs .tab {
+		font-size: 14px;
+		padding: 20px 5px;
+	}
+	.header .header_discounts .tab_content .button_wrap {
+	    text-align: center;
+	}
+	footer .tab_item a {
+		font-size: 30px;
+	}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	.header .header_discounts .tabs .tab {
+		font-size: 12px;
+	}
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+	
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}

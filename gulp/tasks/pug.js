@@ -1,5 +1,5 @@
 module.exports = function(){
-    $.gulp.task('pug', ()=>   {
+    $.gulp.task('pug', () =>   {
 			// let locals = require('../../content.json');
 				return $.gulp.src('src/pug/page/*.pug')	
             .pipe($.gp.plumber({

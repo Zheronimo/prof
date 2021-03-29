@@ -1,0 +1,81 @@
+.reviews
+	background:
+		image: url('../img/reviews_bg.jpg')
+		size: cover
+		repeat: repeat-x
+		attachment: fixed
+	color: #FFF 
+	text-align: center 
+	h2
+		margin-bottom: 80px 
+	
+	.owl-carousel
+
+		.carousel_item
+			.img_wrap
+				text-align: center
+				img
+					display: inline-block
+					width: 165px
+					height: 165px
+					border: 10px solid #585a5b
+					-webkit-border-radius: 50% 
+					border-radius: 50% 
+			h4
+				position: relative
+				margin: 35px 0 55px 0
+				padding: 0
+				font:
+					family: "Times New Roman", sans-serif 
+					size: 22px
+				font-style: italic
+				&::after
+					content: ""
+					position: absolute
+					width: 80px
+					height: 1px
+					bottom: -20px
+					left: 46%
+					background: #cea380 
+			p
+				margin: auto
+				display: inline-block
+				float: none
+				line-height: 24px
+				font-size: 15px
+		//Стили стрелок переключения
+		.owl-nav
+			div
+				width: 34px
+				height: 140px
+				position: absolute
+				top: 5%
+				opacity: .6
+				&:hover
+					opacity: 1
+
+				&.owl-prev
+					background-image: url(../img/arrow.png)
+					right: 0
+					transform: rotate(180deg)
+				
+				
+				&.owl-next
+					background-image: url(../img/arrow.png)
+					left: 0
+		// Стили точек переключения			
+		.owl-dots
+			margin-top: 30px
+			width: 100%
+			text-align: center
+			.owl-dot
+				width: 15px
+				height: 15px
+				display: inline-block
+				background-color: #FFF 
+				margin: 0 4px
+				-webkit-border-radius: 50% 
+				border-radius: 50% 
+				opacity: 0.5
+				&.active
+					opacity: 0.8  	

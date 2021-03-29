@@ -1,84 +1,3 @@
-// .portfolio
-// 	display: flex
-// 	flex-direction: column
-// 	flex-wrap: wrap
-// 	max-height: 750px
-// .portfolio__desc
-// 	height: 100%
-// 	display: flex
-// 	background: #ebefe2
-// .portfolio__desc-info
-// 	margin: auto
-// 	text-align: center
-// .portfolio__desc-title
-// 	margin-bottom: 55px
-// .portfolio__desc-skills
-// 	margin-bottom: 55px
-// 	color: $fernGreen
-// 	font-weight: 500
-// .btn__portfolio
-// 	margin: 0 auto
-// .portfolio__desc-icon
-// 	fill: #fff
-// 	margin-right: 10px
-// .slider__display
-// 	display: flex
-// 	justify-content: center
-// 	align-items: center
-// 	flex: 4
-// 	max-height: 525px
-// 	background: #e1e4d7
-// .slider__display-img
-// 	display: block
-// 	max-width: 643px
-// 	max-height: 416px
-// .portfolio__slider
-// 	flex: 2
-// 	display: flex
-// .slider
-// 	display: block
-// 	width: 100%
-// 	height: 100%
-// 	position: relative
-// 	overflow: hidden
-// .slider__list
-// 	position: absolute
-// 	top: 0
-// 	left: 0
-// 	right: 0
-// 	bottom: 0
-// .slider_right .slider__item
-// 	top: 100%
-// .slider__item
-// 	position: absolute
-// 	left: 0
-// 	width: 100%
-// 	height: 100%
-// 	top: -100%
-// 	&.active
-// 		top: 0%
-// .slider__controls
-// 	+coverdiv
-// 	&_down
-// 		background-color: rgba(183, 188, 179, 0.7)
-// 	&_up
-// 		background-color: rgba(164, 170, 160, 0.7)	
-// .slider__control
-// 	width: 43px
-// 	height: 27px
-// 	+center("both")
-// 	fill: #ffffff
-// 	cursor: pointer
-// .slider__img
-// 	max-width: 100%
-// 	max-height: 100%
-// 	position: absolute
-// 	display: block
-// 	top: 0
-// 	left: 0
-// 	right: 0
-// 	bottom: 0
-// 	margin: auto
 .slider
 	height: 100vh
 	max-height: 750px
@@ -126,7 +45,9 @@
 				background-image: url('../img/arrow_down.svg')
 				width: 45px
 				height: 30px
-				transform: rotate(180deg)
+				transform: translate(-50%, -50%) rotate(180deg)
+				+tablets
+
 			&::after 
 				background-color: rgba(235, 229, 219, 0.6)
 			& .control 
@@ -149,12 +70,14 @@
 				position: absolute
 				top: 50%
 				left: 50%
-				transform: translate(-50% -50%)
 				background-size: 45px 30px
 				background-repeat: no-repeat
 				z-index: 2
 				opacity: 0.7
+				transform: translate(-50%, -50%)
 				transition: all 0.2s linear
+				+tablets
+					background-size: 35px 25px
 			&::after 
 				display: block
 				content: ''
@@ -225,38 +148,6 @@
 			animation: scale 2s ease
 		& .slide__desc .work .work__link
 			animation: transitionBottom 2s ease
-.work
-	position: absolute
-	left: 0
-	width: 100%
-	top: 50%
-	text-align: center
-	padding: 0 10%
-	transform: translateY(-50%)
-	&__name
-		// max-width: 500px
-		margin-bottom: 55px
-		+tablets()
-			margin-bottom: 40px
-			font-size: 21px
-		+leptop()
-			font-size: 30px
-		&::after
-			+tablets()
-				margin-top: 15px
-	&__teach 
-		margin-bottom: 55px
-		color: $fernGreen
-		font-weight: 500
-		+tablets()
-			margin-bottom: 15px
-		+leptop()
-			margin-bottom: 20px
-	&__link 
-		margin: 0 auto
-	&__icon 
-		fill: #fff
-		margin-right: 10px
 .control
 	position: absolute
 	top: 0

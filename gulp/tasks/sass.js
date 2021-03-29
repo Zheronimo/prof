@@ -10,7 +10,8 @@ module.exports = function(){
                     };
                 })
             }))
-            .pipe($.gp.sass())
+						.pipe($.gp.sass())
+						.pipe($.gp.groupCssMediaQueries())
             .pipe($.gp.autoprefixer({
                 browsers: ['last 10 versions']
 						}))
@@ -32,13 +33,10 @@ module.exports = function(){
                     };
                 })
             }))
-            .pipe($.gp.sass())
+						.pipe($.gp.sass())
+						.pipe($.gp.groupCssMediaQueries())
             .pipe($.gp.autoprefixer({
                 browsers: ['last 10 versions']
-						}))
-						.pipe($.gp.cssUnit({
-							type: "px-to-rem",
-							rootSize: 16
 						}))
 						.pipe($.gp.cssUnit({
 							type: "px-to-rem",

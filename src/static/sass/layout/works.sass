@@ -10,3 +10,41 @@
 		display: block
 		bottom: 100%
 		width: 50%
+.work
+	position: absolute
+	left: 0
+	width: 100%
+	top: 50%
+	text-align: center
+	padding: 0 10%
+	transform: translateY(-50%)
+	&__name
+		margin-bottom: 55px
+		+tablets()
+			margin-bottom: 40px
+			font-size: 21px
+		+leptop()
+			font-size: 30px
+		&::after
+			+tablets()
+				margin-top: 10px
+	&__teach 
+		margin-bottom: 55px
+		color: $fernGreen
+		font-weight: 500
+		+tablets()
+			margin-bottom: 15px
+		+leptop()
+			margin-bottom: 20px
+	&__link 
+		margin: 0 auto
+		&.btn 
+			+tablets
+				height: 40px
+				width: 185px
+	&__icon 
+		fill: #fff
+		margin-right: 10px
+		+tablets
+			width: 22px
+

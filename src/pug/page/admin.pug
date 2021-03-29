@@ -1,0 +1,52 @@
+extends ../main
+
+block title
+	|Админка
+block content
+	header.admin__header
+		h1.admin__title Панель администрирования
+		a.admin__link(href="index.html") Вернуться на сайт
+	main.admin__content 
+		.admin__tabs.tabs
+			ul.tabs__list
+				li.tabs__item
+					button.tabs__nav.tabs__nav--active(data-tabs-path='about') Обо мне
+				li.tabs__item
+					button.tabs__nav(data-tabs-path='blog') Блог
+				li.tabs__item
+					button.tabs__nav(data-tabs-path='work') Мои работы
+			.tabs__content.tabs__content--active(data-tabs-target='about')
+				h2.tabs__title Страница «Обо мне»
+				.tabs__skills
+					each skill in skills 
+						each skillsArray, skillName in skill
+							.tabs-skill
+								h3.tabs-skill__title= skillName
+								ul.tabs-skill__list
+									each item in skillsArray
+										li.tabs-skill__item
+											span.tabs-skill__name= item.name
+											label
+												input.tabs-skill__value(type="number" step="1" min="0" max="100" value=item.value)
+												span.tabs-skill__percent %
+				button.btn.tabs__btn Сохранить
+			.tabs__content(data-tabs-target='blog')
+				h2.tabs__title Страница «Блог»
+				form.tabs__form(action="")
+					span.tabs__text Добавить запись
+					input.tabs__input(type="text" placeholder="Название")
+					input.tabs__input(type="text" placeholder="Дата")
+					textarea.tabs__area(placeholder="Содержание")
+					button.btn.tabs__btn Добавить
+			.tabs__content(data-tabs-target='work')
+				h2.tabs__title Страница «Мои работы»
+				form.tabs__form(action="")
+					span.tabs__text Добавить работу
+					input.tabs__input(type="text" placeholder="Название проекта")
+					input.tabs__input(type="text" placeholder="Технологии")
+					.file-upload
+						label.file-upload__label
+							input(type="file").tabs__input--file
+							+icon('upload', 'file-upload__icon')
+							span.file-upload__text Загрузить картинку
+					button.btn.tabs__btn Добавить

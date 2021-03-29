@@ -11,8 +11,8 @@ footer.footer
 			ul.socials.footer__socials
 				each item in socials
 					li.socials__item
-						a(href="#" class="socials__link socials__link_" + item)
-							+icon(item, "footer-icon")
+						a(href=item.link class="socials__link socials__link_" + item.name)
+							+icon(item.name, "footer-icon")
 		.footer__right
 			p <q>Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.</q> <br> — Martin Golding
 	.footer__row.footer__row_bottom

@@ -1,5 +1,6 @@
 module.exports = [
     './gulp/tasks/pug',
+    './gulp/tasks/folder-transfer',
     './gulp/tasks/sass',
     './gulp/tasks/serve',
     './gulp/tasks/watch',

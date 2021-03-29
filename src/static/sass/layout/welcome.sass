@@ -1,4 +1,5 @@
 .welcome
+	padding: 0 10px
 	background: url(../img/water.jpg) center center no-repeat
 	background-size: cover
 	position: fixed
@@ -16,7 +17,10 @@
 	background: rgba($asparagus,0) 
 	border: 1px solid #ffffff
 	+tablets()
+		top: 10px
 		right: 50%
+		width: 147px
+		height: 40px
 		transform: translateX(50%)
 	&:hover
 		background: rgba($asparagus,1) 
@@ -27,6 +31,8 @@
 	position: relative
 	+box()
 	perspective: 1000px
+	+tablets
+		height: 400px
 .welcome__user, .welcome__autor
 	display: flex
 	flex-direction: column
@@ -97,6 +103,11 @@
 	+center(x)
 	bottom: 40px
 	color: #fff
+	+tablets 
+		bottom: 10px
+		max-width: 250px
+		width: 100%
+		text-align: center
 
 .custom-chackbox
 	display: flex

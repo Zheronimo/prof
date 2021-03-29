@@ -1,12 +1,18 @@
 extends ../main
 
 block title
-	| Welcome
+	|Мои роботы
 block content
-	section.section.welcome
-		a(href="#").btn.welcome__btn Авторизоваться
-		.welcome__container
-			include ../layout/welcome-user
-			include ../layout/welcome-autor	
-		.welcome__footer
-			p © Кириченко Евгений | Создано с любовью в LoftSchool | 2018 
+	include ../layout/hero
+	section.section.works
+		svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_cararra.works__triangle
+			polygon(points="0,0 0,1000 1000,100")
+		svg(viewbox="0 0 1000 100" preserveAspectRatio="none").triangle.triangle_fill_cararra.triangle_right.works__triangle
+			polygon(points="0,0 0,1000 1000,100")
+		h2.title.works__title
+			|Мои работы
+	include ../layout/portfolio
+	include ../layout/reviews
+	include ../layout/popup
+	include ../layout/popup-error
+	include ../layout/footer

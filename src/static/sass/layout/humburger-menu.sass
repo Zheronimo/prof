@@ -41,6 +41,8 @@
 	justify-content: center
 	align-items: flex-start
 	padding-top: 300px
+	+tablets
+		padding-top: 130px
 	&::before 
 		content: ""
 		position: absolute
@@ -49,7 +51,7 @@
 		left: 0
 		height: 100%
 		z-index: 10
-		background-color: rgba($asparagus, 0.9)
+		background-color: rgba($asparagus, 0.98)
 		display: block
 		transition: .7s
 	&::after
@@ -71,6 +73,7 @@
 	text-align: center
 	transition-delay: none
 .ham-menu__item
+	margin-bottom: 35px
 	position: relative
 	display: block
 	left: -500%
@@ -89,10 +92,12 @@
 	font-size: 63px
 	+lh(66,63)
 	text-transform: uppercase
+	+tablets
+		font-size: 35px
 	&::after
 		content: ""
 		width: 89px
-		height: 30px
+		height: 3px
 		background-color: transparent
 		border-bottom: 3px solid transparent
 		display: block

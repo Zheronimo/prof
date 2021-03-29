@@ -1,0 +1,12 @@
+extends ../main
+
+block title
+	| Welcome
+block content
+	section.section.welcome
+		a(href="#").btn.welcome__btn Авторизоваться
+		.welcome__container
+			include ../layout/welcome-user
+			include ../layout/welcome-autor	
+		.welcome__footer
+			p © Кириченко Евгений | Создано с любовью в LoftSchool | 2018 

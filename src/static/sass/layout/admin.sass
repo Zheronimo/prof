@@ -1,0 +1,26 @@
+.admin 
+	&__header 
+		padding: 25px 30px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		background-color: $asparagus
+	&__title 
+			font-size: 28px
+			font-weight: 500
+			line-height: 1.21
+			color: #ffffff
+	&__link
+		color: #fff
+		+shift()
+		&:hover
+			text-decoration: underline
+	&__content
+		position: relative
+		flex: 1 0 auto
+		background-image: url("../img/water.jpg")
+		+cover
+		&::before
+			content: ''
+			+coverdiv
+			background-color: rgba(255,255,255,0.85)

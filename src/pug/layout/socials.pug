@@ -1,0 +1,5 @@
+ul.socials
+	each item in socials
+		li.socials__item
+			a(href=item.link class="socials__link socials__link_" +item.name)
+				+icon(item.name, "hero-icon")

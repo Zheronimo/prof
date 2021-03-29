@@ -1,7 +1,7 @@
 module.exports = function(){
     $.gulp.task('scripts:lib', function () {
         // return $.gulp.src('src/static/js/libs/*.js')
-        return $.gulp.src(['src/static/js/libs/*.js','node_modules/jquery/dist/jquery.min.js'])
+        return $.gulp.src(['src/static/js/libs/*.js','node_modules/jquery/dist/jquery.min.js', 'node_modules/svg4everybody/dist/svg4everybody.min.js'])
         .pipe ($.gp.concat('libs.min.js'))
         .pipe ($.gulp.dest('build/static/js/'))
         .pipe($.bs.reload({

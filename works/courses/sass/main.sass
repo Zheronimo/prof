@@ -1,0 +1,121 @@
+@import "bourbon/bourbon"
+
+
+/*****************Variables*****************/
+$text-color: #333333
+$color-darck: #000000
+$color-red: #9b1818
+$color-form: #666666
+$color-blue: #003469
+$color-green: #67bc5c
+
+/*****************Global setting*****************/
+body
+	font-family: "RobotoRegular", sans-serif
+	font-weight: normal
+	font-size: 16px
+	color: $text-color
+	min-width: 320px
+	position: relative
+	line-height: 1.42857
+	-webkit-font-smoothing: antialised
+	-ms-overflow-x: hidden
+	overflow-x: hidden  
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+	-webkit-box-shadow: 0 0 0 2px $color-red  
+	box-shadow: 0 0 0 2px $color-red  
+	border-color: $color-red
+body input:required:valid,
+body textarea:required:valid
+	color: green
+
+h1
+	color: #fff
+	line-height: 56px
+	margin: 0
+	font:
+		family: "Clean", sans-serif
+		size: 60px
+		weight: bold
+
+a, a:hover, a:visited, a:active, a:link 
+	color: #fff
+	text-decoration: none
+ul, p
+	margin: 0
+	padding: 0
+li
+	list-style: none
+
+section
+	padding: 58px 0 68px 0
+	
+	h2
+		font:
+			family: "Clean", sans-serif
+			size: 50px
+			
+		line-height: 56px
+		text-align: center 
+		margin-top: 0
+		margin-bottom: 50px
+	h3
+		font-size: 30px
+		margin: 0
+		color: $color-red
+.wrapper
+	.active
+		text-decoration: underline
+	.tabs
+		margin-bottom: 10px 
+		cursor: pointer
+		text-transform: uppercase
+	.tab_item
+		display: none
+		&:first-child
+			display: block
+.button_wrap
+	text-align: center
+.button
+	border: none
+	cursor: pointer
+	display: inline-block
+	height: 46px
+	line-height: 46px
+	padding: 0 32px
+	background-color: $color-red
+	text-transform: uppercase
+	text-align: center
+	font-family: 'RobotoBold', sans-serif 
+	font-size: 16px
+	border-radius: 3px
+	color: #FFF 
+	&.btn_green
+		background-color: $color-green
+	&.btn_white
+		color: #000
+		background-color: #FFF 
+.map
+	min-height: 480px
+.hidden 
+	display: none
+#hidden_form, #form_back
+	max-width: 420px
+	margin: auto
+	position: relative
+ 	
+
+	
+@import "iclude/header"
+@import "iclude/tizer"
+@import "iclude/about"
+@import "iclude/reviews"
+@import "iclude/request"
+@import "iclude/address"
+@import "iclude/footer"
+
+
+	
